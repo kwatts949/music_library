@@ -108,11 +108,19 @@ class AlbumRepository
   # One argument: the id (number)
   def find(id)
     # Executes the SQL query:
-    # SELECT id, title, release_year FROM albums WHERE id = 1;
+    # SELECT id, title, release_year FROM albums WHERE id = $1;
 
     # Returns a single Album object.
   end
+
+  def create(album)
+   # Executes the SQL query:
+    # INSERT INTO albums (title, release_year) VALUES ($1, $2);
+
+    # Inserts a single Album object.
+  end
 end
+
 6. Write Test Examples
 Write Ruby code that defines the expected behaviour of the Repository class, following your design from the table written in step 5.
 
@@ -130,9 +138,27 @@ albums.length  # => 2
 albums.first.id #=> "1"
 albums.first.title #=> "Placebo"
 
+# 2 
+# Find a single record
+repo = AlbumRepository.new
 
-# Add more examples for each method
-Encode this example as a test.
+albums = repo.find(2)
+albums.id # => '2'
+albums.title # => 'Save Rock & Roll'
+
+# 3
+# Creates a new album record
+
+repository = AlbumRepository.new
+
+album = Album.new
+album.title = 'Trompe le Monde'
+album.release_year = 1991
+album.artist_id = 1
+
+repository.create(album)
+
+all_albums = repository.all
 
 7. Reload the SQL seeds before each test run
 Running the SQL code present in the seed file will empty the table and re-insert the seed data.

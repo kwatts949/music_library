@@ -4,5 +4,5 @@ TRUNCATE TABLE artists RESTART IDENTITY;
 -- Replace these statements with your own seed data.
 INSERT INTO artists (name, genre) VALUES ('Placebo', 'Rock');
 
-INSERT INTO albums (title, release_year, artist_id) VALUES ('Placebo', '1996');
-INSERT INTO albums (title, release_year, artist_id) VALUES ('Save Rock & Roll', '2013');
+INSERT INTO albums (title, release_year) VALUES ('Placebo', '1996');
+INSERT INTO albums (title, release_year) VALUES ('Save Rock & Roll', '2013');
