@@ -160,6 +160,15 @@ repository.create(album)
 
 all_albums = repository.all
 
+# 4
+# Returns an artist with all albums
+
+repository = AlbumRepository.new
+
+artist.name # "Placebo"
+artist.genre # "Alternative"
+arist.albums.length # 2
+
 7. Reload the SQL seeds before each test run
 Running the SQL code present in the seed file will empty the table and re-insert the seed data.
 

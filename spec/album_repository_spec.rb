@@ -17,7 +17,7 @@ end
 
     albums = repo.all 
 
-    expect(albums.length).to eq 2
+    expect(albums.length).to eq 3
     expect(albums.first.id).to eq '1'
     expect(albums.first.title).to eq "Placebo"
   end
@@ -55,7 +55,7 @@ end
     repo.delete(1)
 
     albums = repo.all
-    expect(albums.length).to eq 1
+    expect(albums.length).to eq 2
     expect(albums.first.title).to eq "Save Rock & Roll"
   end
 end

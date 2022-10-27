@@ -16,6 +16,7 @@ class Application
     @io.puts "What would you like to do?"
     @io.puts '1 - List all albums'
     @io.puts '2 - List all artists'
+
     while true do
     @io.puts 'Please enter your choice'
     selection = @io.gets.chomp
